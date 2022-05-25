@@ -159,7 +159,7 @@ Knit your document and look at the output for your `major_earnings` code chunk.
 What changed about the output?
 When would this `knitr::kable` code be useful?
 
-**Response**:
+**Response**: Different formatted output table window. Used for exporting?
 
 
 ![](README-img/noun_pause.png) **Planned Pause Point**: If you have any questions, contact your instructor. Otherwise feel free to continue on.
@@ -171,6 +171,11 @@ Let us see how well your descriptions in the [Median Earnings by Major Category]
 1. Below, create a code chunk and name it `major_boxplot`.
 2. Plot the distribution of the variable `median` earnings of full-time, year-round workers for each `major_category` using the *boxplot* and *jitter* geometries.
 
+```{r major_boxplot}
+college_recent_grads %>% 
+  ggplot(mapping = aes(x = median, y = major_category)) +
+  geom_boxplot()+geom_jitter(mapping=aes(color=major_category))
+```
 
 
 Provide a discussion on how your descriptions in the Median Earnings by Major Category section compares.
